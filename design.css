@@ -99,15 +99,17 @@ body {
     color: #cbd5e1; /* Clear readability on dark background */
     margin-bottom: 30px;
     max-width: 500px;
-}
 
-/* --- SOCIAL MEDIA LINKS --- */
-.social-icons {
+    .social-icons {
+    position: fixed;       
+    bottom: 40px;          /* Adjust this number to move it up or down */
+    left: 80px;            /* Adjust this number to move it left or right */
     display: flex;        
     gap: 15px;            
-    margin-bottom: 35px; 
+    z-index: 9999;         
     width: max-content;
 }
+
 
 .social-icons a {
     text-decoration: none;
