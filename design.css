@@ -143,7 +143,7 @@ body {
 /* 1. The main container pinned to the bottom left */
 .social-icons {
     position: absolute;
-    bottom: 30px;         /* Keeps it visible above the fold */
+    bottom: 10px;         /* Keeps it visible above the fold */
     left: 30px;           /* Spacing away from the left window edge */
     display: flex;        /* Lines up icons side-by-side horizontally */
     gap: 15px;            /* Adds uniform space between each link */
