@@ -1,0 +1,179 @@
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Prefer a cleaner modern sans-serif if possible */
+}
+
+body {
+    background-color: #0b1a2d; 
+    color: #ffffff;
+    overflow-x: hidden; /* Prevents unwanted horizontal scroll from absolute positioned elements */
+}
+
+/* --- NAVBAR (Same as your basic setup but refined) --- */
+.navbar {
+    width: 100%;
+    position: fixed; /* Optional: stays at top when scrolling */
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%; /* Increased horizontal padding */
+    z-index: 1000;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00d2ff; /* Your new active blue color */
+}
+
+/* --- HERO SECTION LAYOUT --- */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    padding-top: 80px; /* Accounts for fixed navbar */
+}
+
+.hero-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Key to placing text left, image right */
+    align-items: center;
+    position: relative; /* Necessary for social icons positioning */
+}
+
+/* --- LEFT SIDE: TEXT --- */
+.hero-left {
+    flex: 1; /* Takes up remaining space */
+    padding-right: 50px;
+}
+
+.main-title {
+    font-size: 56px; /* Large heading */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 28px;
+    color: #00d2ff; /* Accent blue for profession */
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #d1d9e6; /* Lighter grey for better reading on dark background */
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+/* --- BUTTONS --- */
+.btn-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-container a {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px; /* Slightly rounded corners */
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-solid {
+    background-color: #00d2ff; /* Accent blue */
+    color: #0b1a2d; /* Dark background color for text contrast */
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.btn-container a:hover {
+    transform: translateY(-3px); /* Subtle hover lift */
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2); /* Soft glow */
+}
+
+/* --- RIGHT SIDE: PORTRAIT --- */
+.hero-right {
+    flex: 1; /* Takes up equal space as the left side */
+    display: flex;
+    justify-content: flex-end; /* Pushes image far right */
+    position: relative;
+}
+
+.portrait-img {
+    max-width: 550px; /* Adjust as needed for your specific image */
+    height: auto;
+    object-fit: cover;
+    /* This effect helps blend the image into the background (Optional) */
+    mask-image: linear-gradient(to right, transparent 10%, black 40%); 
+    border-radius: 50px; /* Optional: rounded corners for a softer look */
+}
+
+/* 1. The main container pinned to the bottom left */
+.social-icons {
+    position: absolute;
+    bottom: 30px;         /* Keeps it visible above the fold */
+    left: 30px;           /* Spacing away from the left window edge */
+    display: flex;        /* Lines up icons side-by-side horizontally */
+    gap: 15px;            /* Adds uniform space between each link */
+    z-index: 99;          /* Forces icons to stay on top of the blue layout graphics */
+    width: auto;          /* Ensures the container doesn't stretch unnecessarily */
+    height: auto;
+}
+
+/* 2. Styling the circular link buttons */
+.social-icons a {
+   text-decoration: none;
+    border: none;         
+    width: 50px;          /* Increased from 40px */
+    height: 50px;         /* Increased from 40px to match */
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* 3. Setting sizes for your custom PNG image files inside the links */
+.social-icon {
+    width: 20px;          /* Keeps image size proportionate inside the circle */
+    height: 20px;
+    object-fit: contain;  /* Prevents distortion of the brand logos */
+}
+
+/* 4. Smooth hover animation effects */
+.social-icons a:hover {
+    color: #00d2ff;
+    border-color: #00d2ff;
+    transform: scale(1.1); /* Slightly pops out when hovered */
+}

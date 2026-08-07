@@ -1,0 +1,40 @@
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Prefer a cleaner modern sans-serif if possible */
+}
+
+body {
+    background-color: #0b1a2d; 
+    color: #ffffff;
+    overflow-x: hidden; /* Prevents unwanted horizontal scroll from absolute positioned elements */
+}
+
+/* --- NAVBAR (Same as your basic setup but refined) --- */
+.navbar {
+    width: 100%;
+    position: fixed; /* Optional: stays at top when scrolling */
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%; /* Increased horizontal padding */
+    z-index: 1000;
+}.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00d2ff; /* Your new active blue color */
+}   
