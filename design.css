@@ -25,7 +25,7 @@ body {
     padding: 25px 10%; 
     z-index: 1000;
     background-color: rgba(11, 26, 45, 0.85);
-    backdrop-filter: blur(10px); /* Modern blurred glass effect */
+    backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -43,7 +43,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #a5b4fc; /* Soft color for unselected links */
+    color: #a5b4fc;
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -54,12 +54,12 @@ body {
     color: #00d2ff; 
 }
 
-/* --- HERO SECTION CONTENT GRID --- */
+/* --- HERO SECTION --- */
 .hero {
     min-height: 100vh; 
     display: flex;
     align-items: center; 
-    padding: 120px 10% 60px 10%; /* Top padding prevents navbar overlap */
+    padding: 120px 10% 60px 10%;
 }
 
 .hero-container {
@@ -96,43 +96,9 @@ body {
 .description {
     font-size: 16px;
     line-height: 1.7;
-    color: #cbd5e1; /* Clear readability on dark background */
+    color: #cbd5e1;
     margin-bottom: 30px;
     max-width: 500px;
-
-    .social-icons {
-    position: fixed;       
-    bottom: 40px;          /* Adjust this number to move it up or down */
-    left: 80px;            /* Adjust this number to move it left or right */
-    display: flex;        
-    gap: 15px;            
-    z-index: 9999;         
-    width: max-content;
-}
-
-
-.social-icons a {
-    text-decoration: none;
-    width: 44px;          
-    height: 44px;         
-    display: flex;        
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(255, 255, 255, 0.15); 
-    border-radius: 50%;
-    color: #ffffff;
-    font-size: 18px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: rgba(255, 255, 255, 0.03);
-
-.social-icons {
-    position: fixed;       
-    bottom: 10px;          /* Adjust this number to move it up or down */
-    left: 80px;            /* Adjust this number to move it left or right */
-    display: flex;        
-    gap: 15px;            
-    z-index: 9999;         
-    width: max-content;
 }
 
 /* --- CALL TO ACTION BUTTONS --- */
@@ -181,23 +147,52 @@ body {
     align-items: center;
 }
 
-.portrait-box {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1 / 1; 
-}
-
 .portrait-img {
     width: 100%;
-    height: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 30px; 
     border: 3px solid rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.05); 
 }
 
-/* --- RESPONSIVE MOBILE DISPLAY FIXES --- */
+/* --- SOCIAL ICONS --- */
+.social-icons {
+    position: fixed;        
+    bottom: 30px;          
+    left: 10%;            
+    display: flex;        
+    gap: 15px;            
+    z-index: 9999;          
+}
+
+.social-icons a {
+    text-decoration: none;
+    width: 44px;          
+    height: 44px;          
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.social-icons a:hover {
+    border-color: #00d2ff;
+    transform: translateY(-3px);
+    background-color: rgba(0, 210, 255, 0.1);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* --- RESPONSIVE MOBILE DISPLAY --- */
 @media (max-width: 992px) {
     .navbar {
         padding: 20px 5%;
@@ -206,21 +201,27 @@ body {
         padding: 120px 5% 60px 5%;
     }
     .hero-container {
-        grid-template-columns: 1fr; /* Stacks column components down */
-        gap: 50px;
+        grid-template-columns: 1fr;
+        gap: 40px;
         text-align: center;
     }
     .hero-left {
         align-items: center;
     }
-    .social-icons, .btn-container {
-        justify-content: center;
-    }
     .main-title {
         font-size: 42px;
     }
-    .portrait-box {
-        max-width: 320px;
-        order: -1; /* Puts image above text on mobile devices */
+    .hero-right {
+        order: -1;
+    }
+    .portrait-img {
+        max-width: 280px;
+    }
+    .social-icons {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 30px;
+        justify-content: center;
     }
 }
